@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+<html lang="en,zh-tw,default">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Just For Fun">
+    <title>Weekly reading (2017/Jun 12-18) - Just For Fun</title>
+    <meta name="author" content="W.D">
+    
+    
+    
+    <meta name="description" content="You are not Google  作者指出軟體工程師常會因業界大頭(例如: Google) 或論壇熱門討論的技術，一頭熱的想導入自己的系統架構中，而忽略的是否真的需要這樣的技術以及真正的問題。  作者亦提出了 UNPHAT 的自我審視方式，來檢驗是否真的要導入一項技術。  Don’t even start considering solutions until you Understa th">
+<meta name="keywords" content="reading">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Weekly reading (2017/Jun 12-18)">
+<meta property="og:url" content="https://option0417.github.io/2017/06/19/Weekly-reading-2017-Jun-12-18/index.html">
+<meta property="og:site_name" content="Just For Fun">
+<meta property="og:description" content="You are not Google  作者指出軟體工程師常會因業界大頭(例如: Google) 或論壇熱門討論的技術，一頭熱的想導入自己的系統架構中，而忽略的是否真的需要這樣的技術以及真正的問題。  作者亦提出了 UNPHAT 的自我審視方式，來檢驗是否真的要導入一項技術。  Don’t even start considering solutions until you Understa th">
+<meta property="og:updated_time" content="2017-06-20T01:50:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Weekly reading (2017/Jun 12-18)">
+<meta name="twitter:description" content="You are not Google  作者指出軟體工程師常會因業界大頭(例如: Google) 或論壇熱門討論的技術，一頭熱的想導入自己的系統架構中，而忽略的是否真的需要這樣的技術以及真正的問題。  作者亦提出了 UNPHAT 的自我審視方式，來檢驗是否真的要導入一項技術。  Don’t even start considering solutions until you Understa th">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://option0417.github.io/assets/images/profile.jpg"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-sxklfps8ywgfyyjcowvnb4gxdgt0zjts3hsguljmv9uqanxjbnitrovtbrek.min.css">
+    <!--STYLES END-->
+    
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">Just For Fun</a>
+    </div>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="/assets/images/profile.jpg" alt="Author&#39;s picture"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/profile.jpg" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">W.D</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p><em>programmer and play a lot in backend.</em></p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/option0417" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://twitter.com/option0417" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                        <span class="sidebar-button-desc">Twitter</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Weekly reading (2017/Jun 12-18)
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time itemprop="datePublished" datetime="2017-06-19T00:00:00+08:00">
+	
+		    Jun 19, 2017
+    	
+    </time>
+    
+</div>
+
+    
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <h2 id="You-are-not-Google"><a href="#You-are-not-Google" class="headerlink" title="You are not Google"></a><a href="https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb" target="_blank" rel="external">You are not Google</a></h2><p>  作者指出軟體工程師常會因業界大頭(例如: Google) 或論壇熱門討論的技術，一頭熱的想導入自己的系統架構中，而忽略的是否真的需要這樣的技術以及真正的問題。<br>  作者亦提出了 <strong>UNPHAT</strong> 的自我審視方式，來檢驗是否真的要導入一項技術。</p>
+<ul>
+<li>Don’t even start considering solutions until you <strong>Understa</strong> the problem. Your goal should be to “solve” the problem mostly within the problem domain, not the solution domain.</li>
+<li><strong>eNumerate</strong> multiple candidate solutions. Don’t just start prodding at your favorite!</li>
+<li>Consider a candidate solution, then read the <strong>Paper</strong> if there is one.</li>
+<li>Determine the <strong>Historical context</strong> in which the candidate solution was designed or developed.</li>
+<li>Weigh <strong>Advantages</strong> against disadvantages. Determine what was de-prioritized to achieve what was prioritized.</li>
+<li><p><strong>Think!</strong> Soberly and humbly ponder how well this solution fits your problem. What fact would need to be different for you to change your mind? For instance, how much smaller would the data need to be before you’d elect not to use Hadoop?</p>
+<p>覺得概念如同 <a href="https://en.wikipedia.org/wiki/Donald_Knuth" target="_blank" rel="external"><strong>Donald Ervin Knuth</strong></a> 說過的 <strong>premature optimization is the root of all evil (or at least most of it) in programming</strong> (<em>過早的最佳化是種罪惡</em>)，先把焦點放在<strong>要解決的問題</strong>，而不是解決問題的方法。</p>
+</li>
+</ul>
+<h2 id="否决你方案的领导并不傻！小心让优越感毁掉你的职业生涯"><a href="#否决你方案的领导并不傻！小心让优越感毁掉你的职业生涯" class="headerlink" title="否决你方案的领导并不傻！小心让优越感毁掉你的职业生涯"></a><a href="http://36kr.com/p/5079363.html" target="_blank" rel="external">否决你方案的领导并不傻！小心让优越感毁掉你的职业生涯</a></h2><p>  所謂「文人相輕，武人相重」，工程師這類文人在職場上的確多少會有意見被否決或各執一詞的時候。在溝通當下該如何理性的看待事情，而不被情緒影響，我想是需要學習的一門課題。 這篇文章就以作者自身的體驗來講述成因以及如何解決。</p>
+<p>  簡單講就是 <strong>態度</strong> 和 <strong>謙遜</strong>！ 把目標放在問題本身，而非自我或溝通過程。何況「三人行必有我師焉」，每個人的成長、學習、生活方式都不同，多多少少都有可以跟他人學習的地方。共勉之！ </p>
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/reading/">reading</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/07/The-Ten-Commandments-of-Egoless-Programming/"  data-tooltip="The Ten Commandments of Egoless Programming">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/26/Weekly-reading-2017-Jun-19-25/" data-tooltip="Weekly reading (2017/Jun 19-25)">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://option0417.github.io/2017/06/19/Weekly-reading-2017-Jun-12-18/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://option0417.github.io/2017/06/19/Weekly-reading-2017-Jun-12-18/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://option0417.github.io/2017/06/19/Weekly-reading-2017-Jun-12-18/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2017 W.D. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/07/The-Ten-Commandments-of-Egoless-Programming/"  data-tooltip="The Ten Commandments of Egoless Programming">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/26/Weekly-reading-2017-Jun-19-25/" data-tooltip="Weekly reading (2017/Jun 19-25)">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://option0417.github.io/2017/06/19/Weekly-reading-2017-Jun-12-18/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://option0417.github.io/2017/06/19/Weekly-reading-2017-Jun-12-18/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://option0417.github.io/2017/06/19/Weekly-reading-2017-Jun-12-18/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-close"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://option0417.github.io/2017/06/19/Weekly-reading-2017-Jun-12-18/">
+                    <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://option0417.github.io/2017/06/19/Weekly-reading-2017-Jun-12-18/">
+                    <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://option0417.github.io/2017/06/19/Weekly-reading-2017-Jun-12-18/">
+                    <i class="fa fa-google-plus"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/profile.jpg" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">W.D</h4>
+        
+            <div id="about-card-bio"><p><em>programmer and play a lot in backend.</em></p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Taiwan
+            </div>
+        
+    </div>
+</div>
+
+        <div id="algolia-search-modal" class="modal-container">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="close-button"><i class="fa fa-close"></i></span>
+            <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+                <span class="searchby-algolia-text text-color-light text-small">by</span>
+                <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+            </a>
+            <i class="search-icon fa fa-search"></i>
+            <form id="algolia-search-form">
+                <input type="text" id="algolia-search-input" name="search"
+                    class="form-control input--large search-input" placeholder="Search "
+                    />
+            </form>
+        </div>
+        <div class="modal-body">
+            <div class="no-result text-color-light text-center">no post found</div>
+            <div class="results">
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2011/10/26/Apache2-2-Subversion1-7-0-安裝設定/">
+                            <h3 class="media-heading">Apache2.2 + Subversion1.7.0 安裝設定</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Oct 26, 2011
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2014/09/18/Reading-超爆蘋果橘子經濟學/">
+                            <h3 class="media-heading">[Reading] 超爆蘋果橘子經濟學</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Sep 18, 2014
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2016/09/12/Reading-沒了名片，你還剩下什麼？/">
+                            <h3 class="media-heading">[Reading] 沒了名片，你還剩下什麼？</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Sep 12, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2016/11/13/Reading-智慧型資產配置/">
+                            <h3 class="media-heading">[Reading] 智慧型資產配置</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Nov 13, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2016/11/14/Note-人類行為大數據分析-資料科學如何應用在教育及醫療領域/">
+                            <h3 class="media-heading">[Note] 人類行為大數據分析: 資料科學如何應用在教育及醫療領域</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Nov 14, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p class="results-count text-medium"
+                data-message-zero="no post found"
+                data-message-one="1 post found"
+                data-message-other="{n} posts found">
+                11 posts found
+            </p>
+        </div>
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/nature-forest-industry-rails.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-ivwiy10zeb8fifc4swnhkwneuk64y53w2scmdmtp8thi9cqfxh31aowtroaz.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+    </body>
+</html>

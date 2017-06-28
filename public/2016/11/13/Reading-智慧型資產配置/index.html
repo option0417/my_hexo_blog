@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+<html lang="en,zh-tw,default">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Just For Fun">
+    <title>[Reading] 智慧型資產配置 - Just For Fun</title>
+    <meta name="author" content="W.D">
+    
+    
+    
+    <meta name="description" content="Ch. 1 通論Ch. 2 風險與報酬 高報酬亦帶來高風險，低報酬亦不代表沒風險。 衡量風險的方式是 計算多期報酬的標準差  Ch. 3 多資產投資組合的行為 不同資產配置的投資組合中，各資產的相關性越低越好。 將資產分配到不相關的資產中，能有效的降低風險並提高報酬。 定期審視配置並重新平衡，是維持報酬的好方法。  Ch. 4 真實世界中投資組合的行為 主要投資債券的組合中，加入少量的股票，可有效">
+<meta name="keywords" content="reading,invest">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="[Reading] 智慧型資產配置">
+<meta property="og:url" content="https://option0417.github.io/2016/11/13/Reading-智慧型資產配置/index.html">
+<meta property="og:site_name" content="Just For Fun">
+<meta property="og:description" content="Ch. 1 通論Ch. 2 風險與報酬 高報酬亦帶來高風險，低報酬亦不代表沒風險。 衡量風險的方式是 計算多期報酬的標準差  Ch. 3 多資產投資組合的行為 不同資產配置的投資組合中，各資產的相關性越低越好。 將資產分配到不相關的資產中，能有效的降低風險並提高報酬。 定期審視配置並重新平衡，是維持報酬的好方法。  Ch. 4 真實世界中投資組合的行為 主要投資債券的組合中，加入少量的股票，可有效">
+<meta property="og:updated_time" content="2017-04-09T16:02:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Reading] 智慧型資產配置">
+<meta name="twitter:description" content="Ch. 1 通論Ch. 2 風險與報酬 高報酬亦帶來高風險，低報酬亦不代表沒風險。 衡量風險的方式是 計算多期報酬的標準差  Ch. 3 多資產投資組合的行為 不同資產配置的投資組合中，各資產的相關性越低越好。 將資產分配到不相關的資產中，能有效的降低風險並提高報酬。 定期審視配置並重新平衡，是維持報酬的好方法。  Ch. 4 真實世界中投資組合的行為 主要投資債券的組合中，加入少量的股票，可有效">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://option0417.github.io/assets/images/profile.jpg"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-sxklfps8ywgfyyjcowvnb4gxdgt0zjts3hsguljmv9uqanxjbnitrovtbrek.min.css">
+    <!--STYLES END-->
+    
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">Just For Fun</a>
+    </div>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="/assets/images/profile.jpg" alt="Author&#39;s picture"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/profile.jpg" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">W.D</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p><em>programmer and play a lot in backend.</em></p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/option0417" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://twitter.com/option0417" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                        <span class="sidebar-button-desc">Twitter</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            [Reading] 智慧型資產配置
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time itemprop="datePublished" datetime="2016-11-13T00:00:00+08:00">
+	
+		    Nov 13, 2016
+    	
+    </time>
+    
+</div>
+
+    
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <h4 id="Ch-1-通論"><a href="#Ch-1-通論" class="headerlink" title="Ch. 1 通論"></a>Ch. 1 通論</h4><h4 id="Ch-2-風險與報酬"><a href="#Ch-2-風險與報酬" class="headerlink" title="Ch. 2 風險與報酬"></a>Ch. 2 風險與報酬</h4><ul>
+<li>高報酬亦帶來高風險，低報酬亦不代表沒風險。</li>
+<li>衡量風險的方式是 <strong>計算多期報酬的標準差</strong></li>
+</ul>
+<h4 id="Ch-3-多資產投資組合的行為"><a href="#Ch-3-多資產投資組合的行為" class="headerlink" title="Ch. 3 多資產投資組合的行為"></a>Ch. 3 多資產投資組合的行為</h4><ul>
+<li>不同資產配置的投資組合中，各資產的相關性越低越好。</li>
+<li>將資產分配到不相關的資產中，能有效的降低風險並提高報酬。</li>
+<li>定期審視配置並重新平衡，是維持報酬的好方法。</li>
+</ul>
+<h4 id="Ch-4-真實世界中投資組合的行為"><a href="#Ch-4-真實世界中投資組合的行為" class="headerlink" title="Ch. 4 真實世界中投資組合的行為"></a>Ch. 4 真實世界中投資組合的行為</h4><ul>
+<li>主要投資債券的組合中，加入少量的股票，可有效的降低風險並提高報酬。</li>
+<li>主要投資股票的組合中，加入少量的債券，可有效的降低風險並只減少少量的報酬。</li>
+<li>以短期債券 (6個月 ~ 5年) 作為風險稀釋資產</li>
+<li>小型股為主的投資組合，比大型股為主的投資組合，需要更多的債券來稀釋風險。 小型股/債券 50/50 = 大型股/債券 75/25</li>
+</ul>
+<h4 id="Ch-5-最佳資產配置"><a href="#Ch-5-最佳資產配置" class="headerlink" title="Ch. 5 最佳資產配置"></a>Ch. 5 最佳資產配置</h4><ul>
+<li>最佳的資產配置是無法預測的。</li>
+<li>小型股配上大型股，並分散至全球市場的配置，可說是最有效的配置方式。</li>
+<li>資產配置的三個因素：<br>1. S&amp;P 500 追蹤錯誤的承受度<br>2. 希望持有的資產數目<br>3. 對風險的容忍度</li>
+</ul>
+<h4 id="Ch-6-市場效率"><a href="#Ch-6-市場效率" class="headerlink" title="Ch. 6 市場效率"></a>Ch. 6 市場效率</h4><ul>
+<li>基金經理人無法長期維持高報酬，即無長期選股能力。</li>
+<li>沒有人能預測市場。</li>
+<li>以過去的績效來挑選基金經理人是沒有用的。</li>
+<li>投資股市最理性的方法是，運用低成本並被動的投資工具，也就是指數型基金。</li>
+</ul>
+<h4 id="Ch-7-其他補充"><a href="#Ch-7-其他補充" class="headerlink" title="Ch. 7 其他補充"></a>Ch. 7 其他補充</h4><ul>
+<li>爛公司通常是好股票，好公司通常是爛股票。因此價值投資可能會有最好的長期報酬。</li>
+<li>P/B比(股價淨值比) 是公司價值的最佳指標。</li>
+</ul>
+<h4 id="Ch-8-執行你的資產配置策略"><a href="#Ch-8-執行你的資產配置策略" class="headerlink" title="Ch. 8 執行你的資產配置策略"></a>Ch. 8 執行你的資產配置策略</h4><ul>
+<li>風險與報酬必定糾結在一起。</li>
+<li>一定要從歷史中學到教訓。</li>
+<li>維持資產配置的分配率，變低的就多買點，變高的就賣掉一些。</li>
+</ul>
+<h4 id="Ch-9-投資資源"><a href="#Ch-9-投資資源" class="headerlink" title="Ch. 9 投資資源"></a>Ch. 9 投資資源</h4>
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/invest/">invest</a> <a class="tag tag--primary tag--small t-link" href="/tags/reading/">reading</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/12/Reading-沒了名片，你還剩下什麼？/"  data-tooltip="[Reading] 沒了名片，你還剩下什麼？">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/11/14/Note-人類行為大數據分析-資料科學如何應用在教育及醫療領域/" data-tooltip="[Note] 人類行為大數據分析: 資料科學如何應用在教育及醫療領域">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://option0417.github.io/2016/11/13/Reading-智慧型資產配置/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://option0417.github.io/2016/11/13/Reading-智慧型資產配置/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://option0417.github.io/2016/11/13/Reading-智慧型資產配置/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2017 W.D. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/12/Reading-沒了名片，你還剩下什麼？/"  data-tooltip="[Reading] 沒了名片，你還剩下什麼？">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/11/14/Note-人類行為大數據分析-資料科學如何應用在教育及醫療領域/" data-tooltip="[Note] 人類行為大數據分析: 資料科學如何應用在教育及醫療領域">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://option0417.github.io/2016/11/13/Reading-智慧型資產配置/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://option0417.github.io/2016/11/13/Reading-智慧型資產配置/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://option0417.github.io/2016/11/13/Reading-智慧型資產配置/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-close"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://option0417.github.io/2016/11/13/Reading-智慧型資產配置/">
+                    <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://option0417.github.io/2016/11/13/Reading-智慧型資產配置/">
+                    <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://option0417.github.io/2016/11/13/Reading-智慧型資產配置/">
+                    <i class="fa fa-google-plus"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/profile.jpg" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">W.D</h4>
+        
+            <div id="about-card-bio"><p><em>programmer and play a lot in backend.</em></p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Taiwan
+            </div>
+        
+    </div>
+</div>
+
+        <div id="algolia-search-modal" class="modal-container">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="close-button"><i class="fa fa-close"></i></span>
+            <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+                <span class="searchby-algolia-text text-color-light text-small">by</span>
+                <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+            </a>
+            <i class="search-icon fa fa-search"></i>
+            <form id="algolia-search-form">
+                <input type="text" id="algolia-search-input" name="search"
+                    class="form-control input--large search-input" placeholder="Search "
+                    />
+            </form>
+        </div>
+        <div class="modal-body">
+            <div class="no-result text-color-light text-center">no post found</div>
+            <div class="results">
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2011/10/26/Apache2-2-Subversion1-7-0-安裝設定/">
+                            <h3 class="media-heading">Apache2.2 + Subversion1.7.0 安裝設定</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Oct 26, 2011
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2014/09/18/Reading-超爆蘋果橘子經濟學/">
+                            <h3 class="media-heading">[Reading] 超爆蘋果橘子經濟學</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Sep 18, 2014
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2016/09/12/Reading-沒了名片，你還剩下什麼？/">
+                            <h3 class="media-heading">[Reading] 沒了名片，你還剩下什麼？</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Sep 12, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2016/11/13/Reading-智慧型資產配置/">
+                            <h3 class="media-heading">[Reading] 智慧型資產配置</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Nov 13, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2016/11/14/Note-人類行為大數據分析-資料科學如何應用在教育及醫療領域/">
+                            <h3 class="media-heading">[Note] 人類行為大數據分析: 資料科學如何應用在教育及醫療領域</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Nov 14, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p class="results-count text-medium"
+                data-message-zero="no post found"
+                data-message-one="1 post found"
+                data-message-other="{n} posts found">
+                11 posts found
+            </p>
+        </div>
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/nature-forest-industry-rails.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-ivwiy10zeb8fifc4swnhkwneuk64y53w2scmdmtp8thi9cqfxh31aowtroaz.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+    </body>
+</html>

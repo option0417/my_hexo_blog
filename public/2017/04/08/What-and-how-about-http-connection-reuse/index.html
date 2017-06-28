@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+<html lang="en,zh-tw,default">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Just For Fun">
+    <title>What and how about http persistent connection - Just For Fun</title>
+    <meta name="author" content="W.D">
+    
+    
+    
+    <meta name="description" content="前言工作上有負責 Push 功能的開發，簡單講就是把要送給 Client 端的訊息，透過 http protocol 發送到 Google 和 Apple 的 Push Service，GCM 和 APNS。近來，一方面為了因應越來越大的 Push 發送量；一方面也為了減少 Client 接收 Push 訊息的 latency，而開始進行調整。 首要就是先找出功能的 bottleneck，接著依">
+<meta name="keywords" content="dev">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="What and how about http persistent connection">
+<meta property="og:url" content="https://option0417.github.io/2017/04/08/What-and-how-about-http-connection-reuse/index.html">
+<meta property="og:site_name" content="Just For Fun">
+<meta property="og:description" content="前言工作上有負責 Push 功能的開發，簡單講就是把要送給 Client 端的訊息，透過 http protocol 發送到 Google 和 Apple 的 Push Service，GCM 和 APNS。近來，一方面為了因應越來越大的 Push 發送量；一方面也為了減少 Client 接收 Push 訊息的 latency，而開始進行調整。 首要就是先找出功能的 bottleneck，接著依">
+<meta property="og:image" content="https://option0417.github.io/2017/04/08/What-and-how-about-http-connection-reuse/imgs/connection.png">
+<meta property="og:updated_time" content="2017-06-07T03:49:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="What and how about http persistent connection">
+<meta name="twitter:description" content="前言工作上有負責 Push 功能的開發，簡單講就是把要送給 Client 端的訊息，透過 http protocol 發送到 Google 和 Apple 的 Push Service，GCM 和 APNS。近來，一方面為了因應越來越大的 Push 發送量；一方面也為了減少 Client 接收 Push 訊息的 latency，而開始進行調整。 首要就是先找出功能的 bottleneck，接著依">
+<meta name="twitter:image" content="https://option0417.github.io/2017/04/08/What-and-how-about-http-connection-reuse/imgs/connection.png">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://option0417.github.io/assets/images/profile.jpg"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-sxklfps8ywgfyyjcowvnb4gxdgt0zjts3hsguljmv9uqanxjbnitrovtbrek.min.css">
+    <!--STYLES END-->
+    
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">Just For Fun</a>
+    </div>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="/assets/images/profile.jpg" alt="Author&#39;s picture"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/profile.jpg" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">W.D</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p><em>programmer and play a lot in backend.</em></p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/option0417" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://twitter.com/option0417" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                        <span class="sidebar-button-desc">Twitter</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            What and how about http persistent connection
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time itemprop="datePublished" datetime="2017-04-08T00:00:00+08:00">
+	
+		    Apr 08, 2017
+    	
+    </time>
+    
+</div>
+
+    
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p><img src="./imgs/connection.png" alt="img"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>工作上有負責 Push 功能的開發，簡單講就是把要送給 Client 端的訊息，透過 http protocol 發送到 Google 和 Apple 的 Push Service，GCM 和 APNS。<br>近來，一方面為了因應越來越大的 Push 發送量；一方面也為了減少 Client 接收 Push 訊息的 latency，而開始進行調整。 首要就是先找出功能的 bottleneck，接著依照不同類型 CPU-Bound 或 IO-Bound 而有不同的調整方式。<br>而 IO-Bound 的部分，就先來 review 在 http protocol 和 Java 的規範上什麼是 http persistent connection。</p>
+<hr>
+<h2 id="HTTP-Persistent-Connection"><a href="#HTTP-Persistent-Connection" class="headerlink" title="HTTP Persistent Connection"></a>HTTP Persistent Connection</h2><h3 id="什麼是-HTTP-Persistent-Connection"><a href="#什麼是-HTTP-Persistent-Connection" class="headerlink" title="什麼是 HTTP Persistent Connection?"></a>什麼是 HTTP Persistent Connection?</h3><ul>
+<li>Allowing multiple requests and responses to be carried over a single connection.</li>
+</ul>
+<h3 id="Advantages"><a href="#Advantages" class="headerlink" title="Advantages"></a>Advantages</h3><ul>
+<li>Lower CPU and memory usage (because fewer connections are open simultaneously).</li>
+<li>Enables HTTP pipelining of requests and responses.</li>
+<li>Reduced network congestion (fewer TCP connections).</li>
+<li>Reduced latency in subsequent requests (no handshaking).</li>
+<li>Errors can be reported without the penalty of closing the TCP connection.</li>
+</ul>
+<h3 id="Disadvantages"><a href="#Disadvantages" class="headerlink" title="Disadvantages"></a>Disadvantages</h3><ul>
+<li>Resource will unavailable when connection not close well, it may may check timeout or others for ensure connection reusable.</li>
+</ul>
+<h3 id="How-to"><a href="#How-to" class="headerlink" title="How to"></a>How to</h3><p>在 HTTP 1.1 之後預設所有的 connection 都是 persistent 的，除非額外註明<br><code>connection: close</code><br>來表示 connection 會在 response 後結束。因此 <strong>HTTP implementations SHOULD implement persistent connections.</strong></p>
+<p>但在 HTTP 1.0 時並無 persistent connection 的定義，得在 header 中註明<br><code>connection: keep-alive</code><br>來表示 connection 是 persistent 的</p>
+<p>實作 Server side 的 persistent connection 也有下列的規則來判斷，來相容不同 Client 端的 Request：</p>
+<ol>
+<li>If the “close” connection option is present, the connection will not persist after the current response</li>
+<li>If the received protocol is HTTP/1.1 (or later), the connection will persist after the current response</li>
+<li>If the received protocol is HTTP/1.0, the “keep-alive” connection option is present, the recipient is not a proxy, and the recipient wishes to honor the HTTP/1.0 “keep-alive” mechanism, the connection will persist after the current response</li>
+<li>The connection will close after the current response.</li>
+</ol>
+<hr>
+<h2 id="Java-HttpURLConnection"><a href="#Java-HttpURLConnection" class="headerlink" title="Java HttpURLConnection"></a>Java HttpURLConnection</h2><p>最後來看看在 Java 中如何支援 persistent connection</p>
+<ul>
+<li>Each <strong>HttpURLConnection</strong> instance is used to make a single request <strong>but</strong> the underlying network connection to the HTTP server may be <strong>transparently shared by other instances</strong>.</li>
+</ul>
+<p>也就是說，如果透過 <strong>HttpURLConnection</strong> 作 http 介接的話，不用 concern 如何 persistent connection ，它會解決的！</p>
+<p>那我們到底是不是真的能把一個 connectiob 關掉呢？</p>
+<ul>
+<li><h4 id="Different-of-close-and-disconnect"><a href="#Different-of-close-and-disconnect" class="headerlink" title="Different of close() and disconnect()"></a>Different of <em>close()</em> and <em>disconnect()</em></h4><ul>
+<li>Calling the <strong>close()</strong> methods on the InputStream or OutputStream of an HttpURLConnection after a request may free network resources associated with this instance but has <strong>no effect on any shared persistent connection</strong>.</li>
+<li>Calling the <strong>disconnect()</strong> method may close the underlying socket <strong>if a persistent connection is otherwise idle at that time</strong>.</li>
+<li>HTTP header that influences connection persistence is:<br><code>Connection: close</code></li>
+</ul>
+</li>
+</ul>
+<p>如上所述就算直接呼叫 close() 或 disconnect() ，一樣是 JVM 會自行決定是否真的關閉 connection。</p>
+<p>JVM 也提供了一些參數來控制 persistent connection，</p>
+<ul>
+<li><p><em>http.keepalive (default: true)</em><br>Indicates if persistent connections should be supported. They improve performance by allowing the underlying socket connection to be reused for multiple http requests. If this is set to true then persistent connections will be requested with HTTP 1.1 servers.</p>
+</li>
+<li><p><em>http.maxConnections (default: 5)</em><br>If HTTP keepalive is enabled this value determines the maximum number of idle connections that will be simultaneously kept alive, per destination.</p>
+</li>
+</ul>
+<hr>
+<h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul>
+<li><a href="https://medium.com/r/?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FHTTP_persistent_connection" target="_blank" rel="external">HTTP persistent connection</a></li>
+<li><a href="https://medium.com/r/?url=https%3A%2F%2Ftools.ietf.org%2Fhtml%2Frfc7230%23section-6.3" target="_blank" rel="external">RFC7230</a></li>
+<li><a href="https://medium.com/r/?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F35208950%2Fjava-httpurlconnection-and-pooling" target="_blank" rel="external">Java HttpURLConnection and pooling</a></li>
+<li><a href="https://medium.com/r/?url=http%3A%2F%2Fdocs.oracle.com%2Fjavase%2F6%2Fdocs%2Ftechnotes%2Fguides%2Fnet%2Fhttp-keepalive.html" target="_blank" rel="external">Persistent Connections</a></li>
+</ul>
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/dev/">dev</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/11/18/錢進美國！-TD-Ameritrade-開戶心得/"  data-tooltip="錢進美國！ TD Ameritrade 開戶心得">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/04/11/Hadoop-Distributed-File-System/" data-tooltip="Hadoop Distributed File System">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://option0417.github.io/2017/04/08/What-and-how-about-http-connection-reuse/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://option0417.github.io/2017/04/08/What-and-how-about-http-connection-reuse/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://option0417.github.io/2017/04/08/What-and-how-about-http-connection-reuse/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2017 W.D. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/11/18/錢進美國！-TD-Ameritrade-開戶心得/"  data-tooltip="錢進美國！ TD Ameritrade 開戶心得">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/04/11/Hadoop-Distributed-File-System/" data-tooltip="Hadoop Distributed File System">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://option0417.github.io/2017/04/08/What-and-how-about-http-connection-reuse/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://option0417.github.io/2017/04/08/What-and-how-about-http-connection-reuse/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://option0417.github.io/2017/04/08/What-and-how-about-http-connection-reuse/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-close"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://option0417.github.io/2017/04/08/What-and-how-about-http-connection-reuse/">
+                    <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://option0417.github.io/2017/04/08/What-and-how-about-http-connection-reuse/">
+                    <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://option0417.github.io/2017/04/08/What-and-how-about-http-connection-reuse/">
+                    <i class="fa fa-google-plus"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/profile.jpg" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">W.D</h4>
+        
+            <div id="about-card-bio"><p><em>programmer and play a lot in backend.</em></p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Taiwan
+            </div>
+        
+    </div>
+</div>
+
+        <div id="algolia-search-modal" class="modal-container">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="close-button"><i class="fa fa-close"></i></span>
+            <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+                <span class="searchby-algolia-text text-color-light text-small">by</span>
+                <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+            </a>
+            <i class="search-icon fa fa-search"></i>
+            <form id="algolia-search-form">
+                <input type="text" id="algolia-search-input" name="search"
+                    class="form-control input--large search-input" placeholder="Search "
+                    />
+            </form>
+        </div>
+        <div class="modal-body">
+            <div class="no-result text-color-light text-center">no post found</div>
+            <div class="results">
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2011/10/26/Apache2-2-Subversion1-7-0-安裝設定/">
+                            <h3 class="media-heading">Apache2.2 + Subversion1.7.0 安裝設定</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Oct 26, 2011
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2014/09/18/Reading-超爆蘋果橘子經濟學/">
+                            <h3 class="media-heading">[Reading] 超爆蘋果橘子經濟學</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Sep 18, 2014
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2016/09/12/Reading-沒了名片，你還剩下什麼？/">
+                            <h3 class="media-heading">[Reading] 沒了名片，你還剩下什麼？</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Sep 12, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2016/11/13/Reading-智慧型資產配置/">
+                            <h3 class="media-heading">[Reading] 智慧型資產配置</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Nov 13, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2016/11/14/Note-人類行為大數據分析-資料科學如何應用在教育及醫療領域/">
+                            <h3 class="media-heading">[Note] 人類行為大數據分析: 資料科學如何應用在教育及醫療領域</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Nov 14, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p class="results-count text-medium"
+                data-message-zero="no post found"
+                data-message-one="1 post found"
+                data-message-other="{n} posts found">
+                11 posts found
+            </p>
+        </div>
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/nature-forest-industry-rails.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-ivwiy10zeb8fifc4swnhkwneuk64y53w2scmdmtp8thi9cqfxh31aowtroaz.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+    </body>
+</html>

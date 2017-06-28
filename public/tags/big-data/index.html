@@ -1,0 +1,514 @@
+
+<!DOCTYPE html>
+<html lang="en,zh-tw,default">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Just For Fun">
+    <title>Tag: big data - Just For Fun</title>
+    <meta name="author" content="W.D">
+    
+    
+    
+    <meta name="description" content="programmer, play a lot in the backend">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Just For Fun">
+<meta property="og:url" content="https://option0417.github.io/tags/big-data/index.html">
+<meta property="og:site_name" content="Just For Fun">
+<meta property="og:description" content="programmer, play a lot in the backend">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Just For Fun">
+<meta name="twitter:description" content="programmer, play a lot in the backend">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://option0417.github.io/assets/images/profile.jpg"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-sxklfps8ywgfyyjcowvnb4gxdgt0zjts3hsguljmv9uqanxjbnitrovtbrek.min.css">
+    <!--STYLES END-->
+    
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="1">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">Just For Fun</a>
+    </div>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="/assets/images/profile.jpg" alt="Author&#39;s picture"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="1">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/profile.jpg" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">W.D</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p><em>programmer and play a lot in backend.</em></p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/option0417" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://twitter.com/option0417" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                        <span class="sidebar-button-desc">Twitter</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="1"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/04/11/Hadoop-Distributed-File-System/">
+                            Hadoop Distributed File System
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-04-11T22:59:38+08:00">
+	
+		    Apr 11, 2017
+    	
+    </time>
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h1 id="The-Hadoop-Distributed-File-System"><a href="#The-Hadoop-Distributed-File-System" class="headerlink" title="The Hadoop Distributed File System"></a>The Hadoop Distributed File System</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>在 Hadoop 架構中，較熱門、常見的都是上層的計算應用，例如 MapReduce、Hive、Pig、Spark、Mahout 等等。但這些應用其中有一個重要的元素，就是在底層的分散式資料儲存 HDFS！<br>而在 2010 年左右，Yahoo!就已在 production 上以 25000 台server 建構運行了多個 cluster，其中儲存了 25 PB的資料。而最大的 cluster 包含將近 3500 台server。</p>
+<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p>在 HDFS 的架構上，每個 cluster 係由 1 個 NameNode 和 多個 DataNode 所組成。並將資料分作 metadata 和 application data 各自儲存在 NameNode 和 DataNode 上，並透過 replication 的方式來達到資料的 reliability。</p>
+<ul>
+<li><h3 id="NameNode"><a href="#NameNode" class="headerlink" title="NameNode"></a>NameNode</h3><p>主要儲存了一份稱作 <strong>Namespace</strong> 的檔案結構，就像是檔案路徑 _root_dir/sub<em>dir</em>/file_ 由 file 和 directories 所組成並以階層的方式呈現，<br>其中儲存了包含 permissions、modification、access times、namespace 和 disk space quotas 這類 metadata。<br>NameNode 會將 Namespace 存在記憶體中，稱作 <strong>image</strong>；而 image 修改歷程的資料則稱作 <strong>journal</strong>；亦可將 image 存於底層檔案系統作 persistent，稱作 <strong>check-point</strong>。<br>實際的檔案內容，被切分為預設 128 MB(可調整) 大小的 <strong>block</strong> 來作為最小的資料單元，而分散的 replicate 到各個 DataNode 上，<br>而 NameNode 會維護一份 namespace tree 和一份各個 block 各自放在哪個 DataNode 實體路徑的 mapping table。<br>讀取檔案時，Client 端會先到 NameNode 取得擁有所需 data block 而且最近的 DataNode 位置。<br>寫入檔案時，Client 端會先到 NameNode 取得三個 DataNode 的位置後，再將 data block 寫到這三個 DataNode</p>
+</li>
+<li><h3 id="DataNode"><a href="#DataNode" class="headerlink" title="DataNode"></a>DataNode</h3><ul>
+<li><h4 id="Namespace-ID-Storage-ID"><a href="#Namespace-ID-Storage-ID" class="headerlink" title="Namespace ID / Storage ID"></a>Namespace ID / Storage ID</h4><p>在每個 HDFS 的 cluster 中，會有唯一的 Namespace ID，用來確認 cluster 中的 NameNode 和 DataNode 是管理和儲存同一份資料和結構。<br><br>DataNode 在第一次啟動時，會向設定的 NameNode 進行 handshake 來<strong>取得</strong>該 cluster 的 Namespace ID。<br>DataNode 非第一次啟動時，會向設定的 NameNode 進行 handshake 來<strong>驗證</strong>該 cluster 的 Namespace ID 和自己的是否相同。<br><br>DataNode 和 NameNode 進行的 handshake 中也會<strong>驗證</strong>雙方的軟體版本，<br>如果 Namespace ID 或軟體版本不同的話，DataNode 都會自動關機，因為若 Namespace ID 不同，則可能雙方儲存的資料跟結構都不同；若軟體版本不同，則可能對資料處理的方式不同，造成錯誤。<br><br>Handshake 結束後，就表示 DataNode 和 NameNode 互相註冊了，DataNode 會產生唯一的 <strong>Storage ID</strong> 作為後續和 NameNode 溝通使用。</p>
+</li>
+<li><h4 id="Data-block-Block-report"><a href="#Data-block-Block-report" class="headerlink" title="Data block / Block report"></a>Data block / Block report</h4><p>每個儲存在 DataNode 上的 <strong>Data Block</strong> 會分作兩個檔案儲存在本地端的 native 檔案系統，第一個檔案存放資料本體；第二個檔案存放 metadata 包含checksums 和 時間戳記。 <em>(P.S Data Block 所佔的檔案大小依其實際儲存的資料而定，非固定)</em><br><br>DataNode 則透過 <strong>Block report</strong> 告訴 NameNode 它存了哪塊 Data block，它的 block id、建立時間、block 長度。<br>Block report 除了在 DataNode 啟動後送出第一次後，後面則每小時發送一次。</p>
+</li>
+<li><h4 id="Heartbeats"><a href="#Heartbeats" class="headerlink" title="Heartbeats"></a>Heartbeats</h4><p>DataNode 每隔3秒會發送一次 heartbeats 給 NameNode，裡面夾帶 <em>總共可使用的空間大小</em> 、<em>目前已使用的空間大小</em> 和 <em>目前有多少個正在進行的檔案傳輸</em>，<br>這些資訊都能讓 NameNode 作爲空間使用和Load blance 的決策考量。<br>NameNode 如果10分鐘內沒收到 heartbeats 的話，會將 DataNode 視為離線，且準備啟動 replicas 作業將離線 DataNode 上的 Data block 複製到還在線上的 DataNodes。<br> 因為 NameNode 不主動和 DataNode 連線，所以會在 heartbeats 的 response 中夾帶下列命令來進行管理：</p>
+</li>
+<li>replicate blocks to other nodes</li>
+<li>remove local block replicas</li>
+<li>re-register or to shut down the node</li>
+<li>send an immediate block report</li>
+</ul>
+</li>
+<li><h3 id="HDFS-Client"><a href="#HDFS-Client" class="headerlink" title="HDFS Client"></a>HDFS Client</h3></li>
+<li><h3 id="Image-and-Journal"><a href="#Image-and-Journal" class="headerlink" title="Image and Journal"></a>Image and Journal</h3></li>
+<li><h3 id="Checkpoint-Node"><a href="#Checkpoint-Node" class="headerlink" title="Checkpoint Node"></a>Checkpoint Node</h3></li>
+<li><h3 id="Backup-Node"><a href="#Backup-Node" class="headerlink" title="Backup Node"></a>Backup Node</h3></li>
+<li><h3 id="Upgrades-File-System-Snapshots"><a href="#Upgrades-File-System-Snapshots" class="headerlink" title="Upgrades, File System Snapshots"></a>Upgrades, File System Snapshots</h3></li>
+</ul>
+<h2 id="FILE-I-O-OPERATIONS-AND-REPLICA-MANGEMENT"><a href="#FILE-I-O-OPERATIONS-AND-REPLICA-MANGEMENT" class="headerlink" title="FILE I/O OPERATIONS AND REPLICA MANGEMENT"></a>FILE I/O OPERATIONS AND REPLICA MANGEMENT</h2><ul>
+<li><h3 id="File-Read-and-Write"><a href="#File-Read-and-Write" class="headerlink" title="File Read and Write"></a>File Read and Write</h3></li>
+<li><h3 id="Block-Placement"><a href="#Block-Placement" class="headerlink" title="Block Placement"></a>Block Placement</h3></li>
+<li><h3 id="Replication-management"><a href="#Replication-management" class="headerlink" title="Replication management"></a>Replication management</h3></li>
+<li><h3 id="Balancer"><a href="#Balancer" class="headerlink" title="Balancer"></a>Balancer</h3></li>
+<li><h3 id="Block-Scanner"><a href="#Block-Scanner" class="headerlink" title="Block Scanner"></a>Block Scanner</h3></li>
+<li><h3 id="Decommissioing"><a href="#Decommissioing" class="headerlink" title="Decommissioing"></a>Decommissioing</h3></li>
+<li><h3 id="Inter-Cluster-Data-Copy"><a href="#Inter-Cluster-Data-Copy" class="headerlink" title="Inter-Cluster Data Copy"></a>Inter-Cluster Data Copy</h3></li>
+</ul>
+<h3 id="ref"><a href="#ref" class="headerlink" title="ref:"></a><em>ref</em>:</h3><p><a href="http://storageconference.us/2010/Papers/MSST/Shvachko.pdf" target="_blank" rel="external">The Hadoop Distributed File System</a></p>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/04/11/Hadoop-Distributed-File-System/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2016/11/14/Note-人類行為大數據分析-資料科學如何應用在教育及醫療領域/">
+                            [Note] 人類行為大數據分析: 資料科學如何應用在教育及醫療領域
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2016-11-14T00:00:00+08:00">
+	
+		    Nov 14, 2016
+    	
+    </time>
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="講者：李祈均"><a href="#講者：李祈均" class="headerlink" title="講者：李祈均"></a>講者：李祈均</h3><p><strong>What is BEHAVIORAL SIGNAL PROCESSING (BSP) ?  
+</strong><em>Compute Human Behavior Traits and States for Domain Experts Decision Making</em></p>
+<ul>
+<li><em>Help experts to do things they know in a more efficient manner at scale</em></li>
+<li><em>Develop novel behavioral analytics framework for possible scientific discovery</em></li>
+</ul>
+<p>人類行為分析方式</p>
+<ul>
+<li>訊號產生 — -&gt; 訊號擷取 — -&gt; 訊號分析 — -&gt; 決策(行為判定)</li>
+<li>單向：</li>
+</ul>
+<p><img src="./imgs/BSP01.png" alt="BSP01.png"><br>行為產生機制 → 外顯行為 →內在狀態 行為認知機制 → 主觀量測 → 決策</p>
+<hr>
+<p><img src="./imgs/BSP02.png" alt="BSP02.png"><br>行為產生機制 → 外顯行為 — -&gt; 內在狀態 行為認知機制 → Self Report → 決策</p>
+<ul>
+<li>雙向：<br><img src="./imgs/BSP03.png" alt="BSP03.png"><br>行為產生機制 → 外顯行為 — -&gt; 行為認知機制 → 行為產生機制 → 外顯行為 — -&gt; 行為認知機制 → 主觀量測 → 決策</li>
+</ul>
+<h4 id="COMPUTING-BEHAVIORAL-TRAITS-amp-STATES-FOR-DECISION-MAKING-amp-ACTION"><a href="#COMPUTING-BEHAVIORAL-TRAITS-amp-STATES-FOR-DECISION-MAKING-amp-ACTION" class="headerlink" title="COMPUTING BEHAVIORAL TRAITS &amp; STATES FOR DECISION MAKING &amp; ACTION"></a>COMPUTING BEHAVIORAL TRAITS &amp; STATES FOR DECISION MAKING &amp; ACTION</h4><ul>
+<li>QUANTITATIVE</li>
+<li>EFFICIENCY</li>
+<li>SUPPLMENTARY</li>
+<li>POSSIBILITY</li>
+</ul>
+<h4 id="ELEMENTS-OF-BSP"><a href="#ELEMENTS-OF-BSP" class="headerlink" title="ELEMENTS OF BSP"></a>ELEMENTS OF BSP</h4><ol>
+<li>Fetching</li>
+<li>Pre-processing</li>
+<li>Modeling</li>
+<li>Assessment</li>
+</ol>
+<p><img src="./imgs/BSP04.png" alt="BSP04.png"></p>
+<h3 id="資料代表性"><a href="#資料代表性" class="headerlink" title="資料代表性"></a>資料代表性</h3><ul>
+<li>辨識目標的評分<br>1. 運用 <em>established instrument</em><br>2. <em>Scientific-rigor</em><br>3. Ensure <em>domain-applicable analytics</em> 產出</li>
+<li>如何找出有用的資料<br>1. 討論、討論、討論<br>2. 收的過程影響後面預處理<br>3. 想像未來應用<br>4. 領域專家意見太重要</li>
+<li>ADOS (Autism Diagnostic Observation Schedule)<br>1. Subject interacts with a psychologist for ~45 minutes<br>2. Current gold standard, research-level observational coding<br>3. Psychologists are trained using stringent training protocol<br>4. Semi-structured assessment in eliciting socio-communicative behavior of the ASD children for diagnostics<br>5. Multiple subparts events (14) on rating of a wide range number of socio-communicative behavior (28)</li>
+</ul>
+<h3 id="充分預處理"><a href="#充分預處理" class="headerlink" title="充分預處理"></a>充分預處理</h3><h4 id="訊號預處理"><a href="#訊號預處理" class="headerlink" title="訊號預處理"></a><strong>訊號預處理</strong></h4><h4 id="Label-預處理"><a href="#Label-預處理" class="headerlink" title="Label 預處理"></a><strong>Label 預處理</strong></h4><ul>
+<li><strong>Voice Activity Detector  
+</strong>Speech signal<br><em>1. Energy every frame</em><br> frame = 25ms<br> standard deviation (normalize D.C. offset)<br><em>2. 閥值Threshold</em><br>speech percentage in the wav<br><em>3. Speech Segments</em><br>Energy &gt; Threshold Energy</li>
+<li><strong>建議  
+</strong>1. 資料收集過程重要、重要、重要<br>2. 熟悉資料是必要、必要、必要<br>3. 有些真的太錯、知道錯、不要用<br>4. 要被學的label需要被分析徹底<br>5. domain experts 很厲害<br>6. 跨領域閱讀</li>
+</ul>
+<h3 id="電腦如何「聽」、「讀」及「看」懂人類行為"><a href="#電腦如何「聽」、「讀」及「看」懂人類行為" class="headerlink" title="電腦如何「聽」、「讀」及「看」懂人類行為"></a>電腦如何「聽」、「讀」及「看」懂人類行為</h3><p><img src="./imgs/BSP05.png" alt="低階描述值(low-level descriptors) -&gt; 編碼/Profile -&gt; Machine learning -&gt; 行為分析結果"></p>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2016/11/14/Note-人類行為大數據分析-資料科學如何應用在教育及醫療領域/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">page 1 of 1</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2017 W.D. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/profile.jpg" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">W.D</h4>
+        
+            <div id="about-card-bio"><p><em>programmer and play a lot in backend.</em></p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Taiwan
+            </div>
+        
+    </div>
+</div>
+
+        <div id="algolia-search-modal" class="modal-container">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="close-button"><i class="fa fa-close"></i></span>
+            <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+                <span class="searchby-algolia-text text-color-light text-small">by</span>
+                <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+            </a>
+            <i class="search-icon fa fa-search"></i>
+            <form id="algolia-search-form">
+                <input type="text" id="algolia-search-input" name="search"
+                    class="form-control input--large search-input" placeholder="Search "
+                    />
+            </form>
+        </div>
+        <div class="modal-body">
+            <div class="no-result text-color-light text-center">no post found</div>
+            <div class="results">
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2011/10/26/Apache2-2-Subversion1-7-0-安裝設定/">
+                            <h3 class="media-heading">Apache2.2 + Subversion1.7.0 安裝設定</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Oct 26, 2011
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2014/09/18/Reading-超爆蘋果橘子經濟學/">
+                            <h3 class="media-heading">[Reading] 超爆蘋果橘子經濟學</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Sep 18, 2014
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2016/09/12/Reading-沒了名片，你還剩下什麼？/">
+                            <h3 class="media-heading">[Reading] 沒了名片，你還剩下什麼？</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Sep 12, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2016/11/13/Reading-智慧型資產配置/">
+                            <h3 class="media-heading">[Reading] 智慧型資產配置</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Nov 13, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://option0417.github.io/2016/11/14/Note-人類行為大數據分析-資料科學如何應用在教育及醫療領域/">
+                            <h3 class="media-heading">[Note] 人類行為大數據分析: 資料科學如何應用在教育及醫療領域</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Nov 14, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p class="results-count text-medium"
+                data-message-zero="no post found"
+                data-message-one="1 post found"
+                data-message-other="{n} posts found">
+                11 posts found
+            </p>
+        </div>
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/nature-forest-industry-rails.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-ivwiy10zeb8fifc4swnhkwneuk64y53w2scmdmtp8thi9cqfxh31aowtroaz.min.js"></script>
+<!--SCRIPTS END-->
+
+
+    </body>
+</html>

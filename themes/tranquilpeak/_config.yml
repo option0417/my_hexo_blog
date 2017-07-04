@@ -55,7 +55,8 @@ sidebar:
         #    class: open-algolia-search
         about:
             title: global.about
-            url: /#about
+            #url: /#about
+            url: https://about.me/wd.su
             icon: question
     author_links:
          github:
@@ -104,7 +105,8 @@ sidebar:
 #     class: open-algolia-search
 header:
     right_link:
-        url: /#about
+      #url: /#about
+        url: https://about.me/wd.su
         icon:
         class:
 
@@ -142,7 +144,7 @@ author:
 # large sidebar is swiped on all lower screens
 # 5: Display header bar on all screens and large sidebar is swiped on large screen
 # 6: Display header bar on all screens and medium sidebar is swiped
-sidebar_behavior: 1
+sidebar_behavior: 2
 # Hide sidebar on all article page to let article take full width to improve reading, and
 # enjoy wide images and cover images. (true: enable, false: disable)
 clear_reading: true

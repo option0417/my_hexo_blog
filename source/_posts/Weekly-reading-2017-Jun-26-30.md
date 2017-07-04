@@ -1,6 +1,6 @@
 --
 title: post
-date: 2017-06-27 23:40:11
+date: 2017-06-30 23:40:11
 tags:
 ---
 
@@ -18,4 +18,8 @@ tags:
   4. Focus Up
     團隊人數越多更要專注在重要的專案上，並不是人多就能進行多個專案。記得溝通和管理的成本！
 
-  良好的溝通最重要！
+  總而言之，良好到位的溝通最重要！
+
+## [加速雲端系列文](https://www.facebook.com/shihhaohung/notes?lst=1200532567%3A100000974924946%3A1498802718)
+  台大資工 [洪士灝](https://www.facebook.com/shihhaohung) 教授以自身在業界與學界的經驗，闡述台灣資訊科技產業的現況、遇到的問題，也對比美國矽谷的經驗來提出台灣未來可以如何發展的建議。文章中也包含對年輕學子們的期許後和已身處在業界的人可以如何應對的想法。
+  也因為洪教授的研究領域主要在 [平行處理](https://en.wikipedia.org/wiki/Parallel_computing)、[效能優化](https://en.wikipedia.org/wiki/Program_optimization)、[異質運算](https://en.wikipedia.org/wiki/Heterogeneous_computing)、[大數據](https://en.wikipedia.org/wiki/Big_data)、[資訊安全](https://en.wikipedia.org/wiki/Computer_security)，所以在文章中針對上述領域也都有一番見解！

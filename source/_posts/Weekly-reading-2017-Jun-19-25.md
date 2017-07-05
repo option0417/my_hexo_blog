@@ -1,7 +1,7 @@
 ---
 title: Weekly reading (2017/Jun 19-25)
 date: 2017-06-26
-tags:
+tags: reading
 ---
 
 ## [Where should I put _script_ tags in HTML markup?](https://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup)

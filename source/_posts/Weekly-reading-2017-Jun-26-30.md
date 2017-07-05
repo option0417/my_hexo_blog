@@ -1,7 +1,7 @@
 ---
 title: Weekly reading (2017/Jun 26-30)
 date: 2017-07-01 23:40:11
-tags:
+tags: reading
 ---
 
 ## [The CTO Journey at a Small Startup](https://zapier.com/engineering/startup-cto)

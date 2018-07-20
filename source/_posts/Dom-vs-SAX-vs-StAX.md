@@ -40,10 +40,8 @@ tags: dev
     * 無法隨意存取任何一個節點
     * 若要讀取先前的節點資料，須自行保存
 
-
-
 ### 我的選擇...
-最後選擇的是 StAX 來解析 XML Document，一方面 Event-Driven 消能表現比較好，也節省 Memory。 另一方面，不像 SAX 還得先實做對應的 Handler，在 Pull-model 實作上比較直覺，因為就像 iterate Collection 那樣的方式。
+最後選擇用 StAX 來解析 XML Document，一方面 Event-Driven 效能表現比較好，也節省 Memory。 另一方面，不像 SAX 還得先實做對應的 Handler，Pull-model 在實作上比較直覺，因為就像 iterate 一個 Collection 那樣的方式，來取得資料。 當然這是針對我的應用而做的決定，如果遇到的問題不同，或許 Dom 又會是更好的選擇。
 
 ### _ref_:
 * [Java Dom Parser, tutorialspoint](https://www.tutorialspoint.com/java_xml/java_dom_parser.htm)

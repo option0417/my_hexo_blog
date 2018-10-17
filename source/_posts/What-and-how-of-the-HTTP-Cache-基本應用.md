@@ -1,17 +1,17 @@
 ---
 title: What and how of the HTTP Cache - 基本應用
-date: 2018-10-09
-tags: 
- - dev
- - cache
- - http
+tags:
+  - dev
+  - cache
+  - http
+date: 2018-10-09 00:00:00
 ---
+
 
 這陣子因為工作的關係跟 Cache 有了接觸的機會，從系統底層一直到網路的傳輸多少都有些涉略，也因此想將這陣子所學做些整理。
 首先本文想先介紹 HTTP 的 Cache 機制，其主要目的，簡單講就是減少 Client 端 (主要為 Browser)與 Server 端之間的資料傳輸的次數和資料量。
 
 下面就來針對 HTTP 1.0/1.1 的 Cache 機制作個就介紹。
-
 
 ## HTTP 1.0
 在 HTTP 1.0 時就有提供 [_**Expires**_](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21)、[_**Pragma**_](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32)、[**Last-Modified**](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.29) 和 [**If-Modified-Since**](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.25) 這幾個 Header 來達成 Cache 的效果。
@@ -42,7 +42,7 @@ tags:
 
 ---
 ## HTTP 1.1
-在 HTTP 1.1 針對 Cache 增加了像是 [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9), [ETag](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.19)，來完整 Cache 機制
+在 HTTP 1.1 針對 Cache 增加了像是 [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9), [ETag](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.19)...等，來完整 Cache 機制
 
 ### [ETag](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.19) / [If-None-Match](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.26)
 
@@ -59,14 +59,14 @@ tags:
   ![200](https://i.imgur.com/1yKBifm.png)
 
 
+
 ---
 
 ## Reference
-* [RFC 2616 Caching in HTTP](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html#sec13)
+* [RFC 7234 Hypertext Transfer Protocol (HTTP/1.1): Caching](https://tools.ietf.org/html/rfc7234#section-2)
 * [HTTP 快取](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching?hl=zh-tw)
 * [循序漸進理解 HTTP Cache 機制](https://blog.techbridge.cc/2017/06/17/cache-introduction/)
 * [Cache Control 與 ETag](https://blog.othree.net/log/2012/12/22/cache-control-and-etag/)
 * [REST笔记(五):你应该知道的HTTP头------ETag](https://www.cnblogs.com/tyb1222/archive/2011/12/24/2300246.html)
 * [What's the difference between Cache-Control: max-age=0 and no-cache?](https://stackoverflow.com/questions/1046966/whats-the-difference-between-cache-control-max-age-0-and-no-cache)
 * [初探 HTTP 1.1 Cache 機制](https://blog.toright.com/posts/3414/%E5%88%9D%E6%8E%A2-http-1-1-cache-%E6%A9%9F%E5%88%B6.html)
-###### tags: http

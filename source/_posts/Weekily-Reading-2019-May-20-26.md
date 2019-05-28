@@ -1,7 +1,9 @@
 ---
 title: Weekly Reading (2019/May 20 ~ 26)
 tags: reading
+date: 2019-05-28 10:40:29
 ---
+
 
 ### 1. [redis系列--redis4.0深入持久化](https://www.cnblogs.com/wdliu/p/9377278.html)
 Redis 快，但資料終究是存在記憶體裡面，還是得要有「持久化」的機制來保存重要的資料。
@@ -38,12 +40,10 @@ Redis 快，但資料終究是存在記憶體裡面，還是得要有「持久�
 * [我們失敗了〈三〉- Product/Market Fit](https://kf013099.blogspot.com/2015/12/productmarket-fit.html)
 * [我們失敗了〈四〉- 軟體品質比你想像的還不重要！？](https://kf013099.blogspot.com/2015/12/blog-post.html)
 
-從上述的經驗可以發現：使用者在一個有「需要」但低品質的產品和一個「不必要」卻高品質的產品中，會毫不遲疑地選擇「需要」的那一個。就我現在的觀點，對一個新產品來說，最重要的事情就是利用最短的開發時間去測試使用者究竟需不需要這個產品，也就是 PMF，為了達成這個目的，我認為品質打點折扣其實是可以接受的！
-
 簡單一句話，完美的團隊也會失敗。
 對於產品，要找出「被使用者需要」的東西，而不是「讓使用者需要」。而這過程，除了 Fail Early, Fail Often 還要搶快，而搶快，也就表示對軟體的品質是要有所妥協的。 待達到 [Product/market fit](https://en.wikipedia.org/wiki/Product/market_fit) 再來調整。
 
 ---
 
 ### 4. [Web Architecture 101](https://engineering.videoblocks.com/web-architecture-101-a3224e126947)
-作者以使用者發出一次 Google 搜尋的資料流為例，介紹這樣大型甚至巨型的網站架構，包含 **DNS**、**Load Balance、**Database* 等服務，都做了基本的介紹。
+作者以使用者發出一次 Google 搜尋的資料流為例，介紹這樣大型甚至巨型的網站架構，包含 **DNS**、**Load Balance、**Database** 等服務，都做了基本的介紹。

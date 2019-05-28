@@ -46,4 +46,4 @@ Redis 快，但資料終究是存在記憶體裡面，還是得要有「持久�
 ---
 
 ### 4. [Web Architecture 101](https://engineering.videoblocks.com/web-architecture-101-a3224e126947)
-作者以使用者發出一次 Google 搜尋的資料流為例，介紹這樣大型甚至巨型的網站架構，包含 **DNS**、**Load Balance、**Database** 等服務，都做了基本的介紹。
+作者以使用者發出一次 Google 搜尋的資料流為例，介紹這樣大型甚至巨型的網站架構，包含 **DNS** 、 **Load Balance** 、 **Database** 等服務，都做了基本的介紹。

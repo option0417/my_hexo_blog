@@ -1,7 +1,7 @@
 ---
-title: Weekly Reading (2019/Jun 03 ~ 09)
+title: Weekly Reading - 2019 Jun 03 ~ 09
+date: 2019-06-12
 tags: reading
-date: 2019-06-12 00:00:00
 ---
 
 

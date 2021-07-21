@@ -1,5 +1,5 @@
 ---
-title: Weekly Reading (2021/Jan 11~17)
+title: Weekly Reading - 2021 Jan 11 ~ 17
 date: 2021-01-20
 tags: reading
 ---

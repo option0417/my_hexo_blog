@@ -1,7 +1,7 @@
 ---
-title: Weekly Reading (2019/May 27 ~ Jun 02)
+title: Weekly Reading - 2019 May 27 ~ Jun 02
 tags: reading
-date: 2019-06-04 01:40:00
+date: 2019-06-04
 ---
 
 ### JWT Related

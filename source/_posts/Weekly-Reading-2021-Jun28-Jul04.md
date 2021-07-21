@@ -1,5 +1,5 @@
 ---
-title: Weekly Reading - Jun28 ~ Jul04, 2021
+title: Weekly Reading - 2021 Jun28 ~ Jul04
 date: 2021-07-21
 tags: reading
 ---

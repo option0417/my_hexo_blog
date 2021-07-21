@@ -1,5 +1,5 @@
 ---
-title: Weekly Reading (2019/May 20 ~ 26)
+title: Weekly Reading - 2019 May 20 ~ 26
 tags: reading
 date: 2019-05-28 10:40:29
 ---

@@ -1,5 +1,5 @@
 ---
-title: Weekly Reading (2020/Jul 13 ~ 19)
+title: Weekly Reading - 2020 Jul 13 ~ 19
 date: 2020-07-20
 tags: reading
 ---

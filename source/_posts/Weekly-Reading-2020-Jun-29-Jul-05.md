@@ -1,6 +1,6 @@
 ---
-title: Weekly Reading (2020/Jun 29 ~ Jul 05)
-date: 2020-07-06 17:00:4
+title: Weekly Reading - 2020 Jun 29 ~ Jul 05
+date: 2020-07-06
 tags: reading
 ---
 

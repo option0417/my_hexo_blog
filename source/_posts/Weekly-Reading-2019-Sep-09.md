@@ -1,5 +1,5 @@
 ---
-title: Weekly Reading (2019/Sep 09 ~ 15)
+title: Weekly Reading - 2019 Sep 09 ~ 15
 tags: reading
 date: 2019-09-17
 ---

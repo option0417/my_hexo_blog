@@ -1,5 +1,5 @@
 ---
-title: Weekly Reading (2021 Apr26~May02)
+title: Weekly Reading - 2021 Apr26 ~ May02
 date: 2021-05-04
 tags: reading
 ---

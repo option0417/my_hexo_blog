@@ -1,5 +1,5 @@
 ---
-title: Weekly reading (2017/Jul 24-30)
+title: Weekly Reading - 2017 Jul 24 ~ 30
 date: 2017-07-31
 tags: reading
 ---
